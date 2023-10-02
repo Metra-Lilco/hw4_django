@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from students_app.views import index, generate_student, generate_students
+from students_app.views import index, generate_student, generate_students, teachers
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index),
     path("generate-student/", generate_student),
     path("generate-students/", generate_students),
+    path("teachers/", teachers),
 ]

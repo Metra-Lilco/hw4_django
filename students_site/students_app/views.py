@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from faker import Faker
 
 from students_app.models import Student
+from students_app.models import Teacher
 
 
 fake = Faker()
@@ -39,3 +40,11 @@ def generate_students(request):
             first_name=first_name, last_name=last_name, birth_date=birth_date
         )
     return HttpResponse(f"<h1>{count} students data generated!</h1>")
+
+
+def teachers(request):
+    list_of_teachers = Teacher.objects.all()
+    output = ""
+    for teacher in list_of_teachers:
+        output += f"<li>Name: {teacher.first_name} {teacher.last_name}. Birth date: {teacher.birth_date}. Subject: {teacher.subject}</li>"
+    return HttpResponse(output)

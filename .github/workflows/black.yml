@@ -7,4 +7,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Run Black with --check
+        run: black . --check
       - uses: psf/black@stable
