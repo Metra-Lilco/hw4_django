@@ -46,5 +46,6 @@ def teachers(request):
     list_of_teachers = Teacher.objects.all()
     output = ""
     for teacher in list_of_teachers:
-        output += f"<li>Name: {teacher.first_name} {teacher.last_name}. Birth date: {teacher.birth_date}. Subject: {teacher.subject}</li>"
+        output += f"<li>Name: {teacher.first_name} {teacher.last_name}. \
+        Birth date: {teacher.birth_date}. Subject: {teacher.subject}</li>"
     return HttpResponse(output)
